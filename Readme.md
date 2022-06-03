@@ -1,7 +1,7 @@
 # Личный проект «Кексобукинг»
 
 * Студент: [Maksim Polyakov](https://up.htmlacademy.ru/javascript/26/user/2068567).
-* Наставник: `Неизвестно`.
+* Наставник: `Roman Romenko`.
 
 ---
 
