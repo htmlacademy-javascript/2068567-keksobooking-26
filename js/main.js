@@ -9,6 +9,7 @@ function getRandomInt (min, max) {
   return Math.floor(Math.random() * ((max - min) + 1)) + min;
 }
 
+getRandomInt(2,3);
 // Возвращает случайное число с плавающей точкой из переданного диапазона включительно
 // Диапазон может быть только положительный, включая ноль
 
@@ -20,3 +21,5 @@ function getRandomFloat (min, max, amount) {
   const range = (Math.random() * (max - min)) + min;
   return +(range.toFixed(amount));
 }
+
+getRandomFloat(2,3,1);
