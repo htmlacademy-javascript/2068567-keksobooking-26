@@ -10,21 +10,24 @@ const pristine = new Pristine(adForm, {
 //валидация вместимости в зависимсоти от количества комнат
 const capacity = adForm.querySelector('#capacity');
 const rooms = adForm.querySelector('#room_number');
-let roomSelected = rooms.querySelector('option:checked');
 
 const maxCapacity = {
-  '1': ['1'],
-  '2': ['1', '2'],
-  '3': ['1', '2', '3'],
-  '100': ['0']
+  1: ['1'],
+  2: ['1', '2'],
+  3: ['1', '2', '3'],
+  100: ['0']
 };
 
-const validateCapacity = (capacityValue) => maxCapacity[roomSelected.value].includes(capacityValue);
+const validateCapacity = (capacityValue) => {
+  const roomSelected = rooms[rooms.selectedIndex].value;
+  return maxCapacity[roomSelected].includes(capacityValue);
+};
 
 const getCapacityErrorMessage = () => {
-  const CapacityArray = maxCapacity[roomSelected.value];
+  const roomSelected = rooms[rooms.selectedIndex].value;
+  const CapacityArray = maxCapacity[roomSelected];
   const maxCapacityInt = Math.max(...CapacityArray);
-  if (CapacityArray.includes(0)) {
+  if (CapacityArray.includes('0')) {
     return 'Не для гостей';
   }
   if ((maxCapacityInt % 10) === 1) {
