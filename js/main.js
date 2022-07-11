@@ -1,3 +1,4 @@
+import './validate.js';
 import {createOffer} from './comparison-offer.js';
 import {similarOffers} from './data.js';
 
