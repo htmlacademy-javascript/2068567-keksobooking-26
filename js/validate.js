@@ -38,6 +38,40 @@ const getCapacityErrorMessage = () => {
 
 pristine.addValidator(capacity, validateCapacity, getCapacityErrorMessage);
 
+//валидация зависимости цены за ночь от типа жилья
+const types = adForm.querySelector('#type');
+const prices = adForm.querySelector('#price');
+
+const minPricePlace = {
+  'bungalow': 0,
+  'flat': 1000,
+  'hotel': 3000,
+  'house': 5000,
+  'palace': 10000
+};
+
+types.addEventListener('change', () => {
+  prices.placeholder = minPricePlace[types.value];
+});
+
+const validatePrice = (priceValue) => minPricePlace[types.value] <= priceValue;
+
+const getPriceErrorMessage = () => `Минимальная цена ${minPricePlace[types.value]} руб.`;
+
+pristine.addValidator(prices, validatePrice, getPriceErrorMessage);
+
+//синхронизиция полей время заезда и время выезда
+const timein = adForm.querySelector('#timein');
+const timeout = adForm.querySelector('#timeout');
+
+timein.addEventListener('change', () => {
+  timeout.value = timein.value;
+});
+
+timeout.addEventListener('change', () => {
+  timein.value = timeout.value;
+});
+
 //проверка формы перед отправкой
 adForm.addEventListener('submit', (evt) => {
   evt.preventDefault();
