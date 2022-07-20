@@ -1,4 +1,5 @@
-import './data.js';
-import {similarOffers} from './data.js';
+import './page-status.js';
+import {activeForm, inactiveForm} from './page-status.js';
 
-similarOffers();
+activeForm();
+
