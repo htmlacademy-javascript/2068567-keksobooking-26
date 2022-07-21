@@ -1,4 +1,4 @@
 import './page-status.js';
-import {activeForm, inactiveForm} from './page-status.js';
+import {activeForm} from './page-status.js';
 
 activeForm();
