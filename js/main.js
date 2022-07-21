@@ -1,10 +1,4 @@
-import './validate.js';
-import {createOffer} from './comparison-offer.js';
-import {similarOffers} from './data.js';
+import './page-status.js';
+import {activeForm} from './page-status.js';
 
-const canvas = document.querySelector('#map-canvas');
-const similarOffer = similarOffers();
-const card = createOffer(similarOffer[0]);
-
-canvas.append(card);
-//console.log(card);
+activeForm();
