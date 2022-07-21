@@ -1035,3 +1035,18 @@ fieldset {
 .hidden {
   display: none;
 }
+
+/**
+ * для Pristine
+ */
+
+.ad-form__element--error {
+  color: red;
+}
+
+.ad-form__element--invalid input,
+.ad-form__element--invalid select {
+  border: 1px solid red;
+}
+
+
