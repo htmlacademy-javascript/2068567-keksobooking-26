@@ -1,4 +1,7 @@
-import './page-status.js';
-import {activeForm} from './page-status.js';
+import './slider-price.js';
+import {addressValueDeafault, createOfferMarker} from './map.js';
+import {similarOffers} from './data.js';
+import './validate.js';
 
-activeForm();
+addressValueDeafault();
+createOfferMarker(similarOffers());
